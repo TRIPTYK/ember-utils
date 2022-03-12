@@ -1,0 +1,10 @@
+<form {{on 'submit' this.submit}} ...attributes>
+  <label for='name'>Name</label>
+  <input
+    id='name'
+    type='text'
+    value={{changeset-get @changeset 'name'}}
+    {{on 'change' (fn this.updateValue 'name')}}
+  />
+  <button type='submit' disabled={{@changeset.isInvalid}}>submit</button>
+</form>
