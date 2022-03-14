@@ -1,6 +1,6 @@
 {
   "name": "@triptyk/ember-route-switch",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Prevents leaving route without certain conditions.",
   "keywords": [
     "ember-addon"

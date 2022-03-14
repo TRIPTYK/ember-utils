@@ -1,20 +1,19 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { getOwner } from '@ember/application';
 import type ApplicationInstance from '@ember/application/instance';
-import type { Route } from '@ember/routing';
 import type Transition from '@ember/routing/-private/transition';
 import { action } from '@ember/object';
 import type RouteSwitch from '../services/route-switch';
 
-export function RouteSwitchProtected<T extends { new (...args: any[]): Route }>(
+export function RouteSwitchProtected<T extends { new (...args: any[]): any }>(
   constructor: T
 ): any {
   const klass = class extends constructor {
     declare routeSwitch: RouteSwitch;
 
     didTransition(): void {
-      super.didTransition?.();
       this.routeSwitch.reset();
+      super.didTransition?.();
     }
 
     constructor(...args: any[]) {
