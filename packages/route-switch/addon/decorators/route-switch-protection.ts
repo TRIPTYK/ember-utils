@@ -8,7 +8,7 @@ import type RouteSwitch from '../services/route-switch';
 
 export function RouteSwitchProtected<T extends { new (...args: any[]): Route }>(
   constructor: T
-) {
+): any {
   const klass = class extends constructor {
     declare routeSwitch: RouteSwitch;
 
