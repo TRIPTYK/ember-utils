@@ -1,7 +1,7 @@
 {
   "name": "@triptyk/ember-route-switch",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Prevents leaving route without certain conditions.",
   "keywords": [
     "ember-addon"
   ],
