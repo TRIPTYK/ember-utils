@@ -1,7 +1,7 @@
 import { inject } from '@ember/service';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import type RouteSwitch from 'route-switch/services/route-switch';
+import type RouteSwitch from '@triptyk/ember-route-switch/services/route-switch';
 import { Changeset } from 'ember-changeset';
 import type { TypedBufferedChangeset } from 'ember-form-changeset-validations/components/typed-changeset';
 

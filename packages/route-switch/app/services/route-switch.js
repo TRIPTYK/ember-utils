@@ -1,1 +1,1 @@
-export { default } from 'route-switch/services/route-switch';
+export { default } from '@triptyk/ember-route-switch/services/route-switch';

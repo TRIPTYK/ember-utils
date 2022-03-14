@@ -29,16 +29,16 @@
         "tests/dummy/app/*",
         "app/*"
       ],
-      "route-switch": [
+      "@triptyk/ember-route-switch": [
         "addon"
       ],
-      "route-switch/*": [
+      "@triptyk/ember-route-switch/*": [
         "addon/*"
       ],
-      "route-switch/test-support": [
+      "@triptyk/ember-route-switch/test-support": [
         "addon-test-support"
       ],
-      "route-switch/test-support/*": [
+      "@triptyk/ember-route-switch/test-support/*": [
         "addon-test-support/*"
       ],
       "*": [
