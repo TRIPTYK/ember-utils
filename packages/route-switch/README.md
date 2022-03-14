@@ -1,7 +1,9 @@
 route-switch
 ==============================================================================
 
-[Short description of the addon.]
+Mark a route as protected and handle if user can leave route under certain conditions
+
+Ex : Prompting if you want to save your changes before leaving a route
 
 
 Compatibility
@@ -16,14 +18,22 @@ Installation
 ------------------------------------------------------------------------------
 
 ```
-ember install route-switch
+ember install @triptyk/ember-route-switch
 ```
 
 
 Usage
 ------------------------------------------------------------------------------
 
-[Longer description of how to use the addon in apps.]
+Use the 
+
+```ts
+import Route from '@ember/routing/route';
+import { RouteSwitchProtected } from '@triptyk/ember-route-switch/decorators/route-switch-protection';
+
+@RouteSwitchProtected
+export default class Articles extends Route {}
+```
 
 
 Contributing

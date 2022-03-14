@@ -14,7 +14,7 @@ export function RouteSwitchProtected<T extends { new (...args: any[]): Route }>(
 
     didTransition(): void {
       super.didTransition?.();
-      this.routeSwitch.resetTransition();
+      this.routeSwitch.reset();
     }
 
     constructor(...args: any[]) {
@@ -28,6 +28,7 @@ export function RouteSwitchProtected<T extends { new (...args: any[]): Route }>(
       super.willTransition?.(transition);
       if (this.routeSwitch.locked) {
         this.routeSwitch.abordTransition(transition);
+        return;
       }
     }
   };

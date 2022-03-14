@@ -11,22 +11,13 @@ export default class PagesArticles extends Component<PagesArticlesArgs> {
   @inject declare routeSwitch: RouteSwitch;
   @tracked changeset: TypedBufferedChangeset;
 
-  transitionAborded = () => {
-    if (this.changeset.isPristine) {
-      this.routeSwitch.approveTransition();
-    }
-  };
-
   constructor(owner: unknown, args: PagesArticlesArgs) {
     super(owner, args);
     this.changeset = Changeset({
       name: '',
     }) as TypedBufferedChangeset;
-    this.routeSwitch.on('transitionAborded', this.transitionAborded);
-  }
-
-  willDestroy(): void {
-    super.willDestroy();
-    this.routeSwitch.off('transitionAborded', this.transitionAborded);
+    this.routeSwitch.listener = () => {
+      return this.changeset.isPristine;
+    };
   }
 }
