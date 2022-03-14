@@ -34,6 +34,8 @@ module.exports = {
     // node files
     {
       files: [
+        'index.js',
+        '**/dummy/config/**',
         './.eslintrc.js',
         './read-cov.js',
         './app/tailwind/tailwind.config.js',
