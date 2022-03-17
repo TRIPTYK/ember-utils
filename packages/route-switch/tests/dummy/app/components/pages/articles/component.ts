@@ -17,6 +17,17 @@ export default class PagesArticles extends Component<PagesArticlesArgs> {
     this.routeSwitch.approveLastTransition();
   }
 
+  @action deny() {
+    this.routeSwitch.denyLastTransition();
+  }
+
+  get isModalOpened() {
+    return (
+      this.routeSwitch.isLastTransitionApproved === undefined &&
+      this.routeSwitch.isTrapped
+    );
+  }
+
   constructor(owner: unknown, args: PagesArticlesArgs) {
     super(owner, args);
     this.changeset = Changeset({

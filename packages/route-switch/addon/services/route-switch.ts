@@ -5,28 +5,34 @@ import type Transition from '@ember/routing/-private/transition';
 
 export default class RouteSwitch extends Service.extend(Evented) {
   @tracked isTrapped: boolean = false;
-  @tracked transitionApproved?: boolean;
-  escapeCondition?: () => boolean;
+  @tracked isLastTransitionApproved?: boolean;
+  @tracked lastTransition?: Transition;
 
-  private lastTransition?: Transition;
+  escapeCondition?: () => boolean;
 
   approveLastTransition() {
     this.isTrapped = false;
-    this.transitionApproved = true;
+    this.isLastTransitionApproved = true;
     this.lastTransition?.retry();
   }
 
+  denyLastTransition() {
+    this.isLastTransitionApproved = false;
+  }
+
   handleTransition(transition: Transition) {
+    // New trans, reset approval
     this.lastTransition = transition;
-    if (this.escapeCondition?.() === false && !this.transitionApproved) {
+    if (this.escapeCondition?.() === false && !this.isLastTransitionApproved) {
       this.isTrapped = true;
+      this.isLastTransitionApproved = undefined;
       transition.abort();
       return;
     }
   }
 
   resetState() {
-    this.transitionApproved = false;
+    this.isLastTransitionApproved = undefined;
     this.isTrapped = false;
     this.lastTransition = undefined;
   }
