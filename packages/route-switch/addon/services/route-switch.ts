@@ -1,40 +1,34 @@
 import Service from '@ember/service';
-import type Transition from '@ember/routing/-private/transition';
-import { tracked } from '@glimmer/tracking';
 import Evented from '@ember/object/evented';
-
-type Listener = (tr: Transition) => boolean;
+import { tracked } from '@glimmer/tracking';
+import type Transition from '@ember/routing/-private/transition';
 
 export default class RouteSwitch extends Service.extend(Evented) {
-  @tracked abordedTransition?: Transition<unknown>;
-  @tracked locked: boolean = false;
+  @tracked isTrapped: boolean = false;
+  @tracked transitionApproved?: boolean;
+  escapeCondition?: () => boolean;
 
-  private _listener?: Listener;
+  private lastTransition?: Transition;
 
-  set listener(value: Listener) {
-    this._listener = value;
+  approveLastTransition() {
+    this.isTrapped = false;
+    this.transitionApproved = true;
+    this.lastTransition?.retry();
   }
 
-  approveTransition() {
-    this.locked = false;
-    this.abordedTransition?.retry();
-    this.abordedTransition = undefined;
-  }
-
-  abordTransition(tr: Transition<unknown>) {
-    tr.abort();
-    this.abordedTransition = tr;
-    // User will handle
-    if (this._listener?.(this.abordedTransition) === true) {
-      this.approveTransition();
+  handleTransition(transition: Transition) {
+    this.lastTransition = transition;
+    if (this.escapeCondition?.() === false && !this.transitionApproved) {
+      this.isTrapped = true;
+      transition.abort();
       return;
     }
   }
 
-  reset() {
-    this._listener = undefined;
-    this.locked = true;
-    this.abordedTransition = undefined;
+  resetState() {
+    this.transitionApproved = false;
+    this.isTrapped = false;
+    this.lastTransition = undefined;
   }
 }
 

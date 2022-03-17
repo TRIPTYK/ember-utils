@@ -1,1 +1,9 @@
+{{this.routeSwitch.isTrapped}}
+{{#if this.routeSwitch.isTrapped}}
+  <div>My modal</div>
+  <button type='button' {{on 'click' this.approve}}>
+
+  </button>
+{{/if}}
+
 <Forms::Article @changeset={{this.changeset}} />

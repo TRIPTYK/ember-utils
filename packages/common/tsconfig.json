@@ -13,6 +13,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
+    "skipLibCheck": true,
     "noEmitOnError": true,
     "noEmit": true,
     "inlineSourceMap": true,
@@ -28,16 +29,16 @@
         "tests/dummy/app/*",
         "app/*"
       ],
-      "common": [
+      "@triptyk/ember-common": [
         "addon"
       ],
-      "common/*": [
+      "@triptyk/ember-common/*": [
         "addon/*"
       ],
-      "common/test-support": [
+      "@triptyk/ember-common/test-support": [
         "addon-test-support"
       ],
-      "common/test-support/*": [
+      "@triptyk/ember-common/test-support/*": [
         "addon-test-support/*"
       ],
       "*": [

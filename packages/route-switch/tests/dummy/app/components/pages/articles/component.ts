@@ -1,3 +1,4 @@
+import { action } from '@ember/object';
 import { inject } from '@ember/service';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
@@ -10,14 +11,17 @@ interface PagesArticlesArgs {}
 export default class PagesArticles extends Component<PagesArticlesArgs> {
   @inject declare routeSwitch: RouteSwitch;
   @tracked changeset: TypedBufferedChangeset;
+  @tracked approved?: boolean;
+
+  @action approve() {
+    this.routeSwitch.approveLastTransition();
+  }
 
   constructor(owner: unknown, args: PagesArticlesArgs) {
     super(owner, args);
     this.changeset = Changeset({
       name: '',
     }) as TypedBufferedChangeset;
-    this.routeSwitch.listener = () => {
-      return this.changeset.isPristine;
-    };
+    this.routeSwitch.escapeCondition = () => this.changeset.isPristine;
   }
 }

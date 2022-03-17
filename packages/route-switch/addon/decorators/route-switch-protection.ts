@@ -11,9 +11,14 @@ export function RouteSwitchProtected<T extends { new (...args: any[]): any }>(
   const klass = class extends constructor {
     declare routeSwitch: RouteSwitch;
 
-    didTransition(): void {
-      this.routeSwitch.reset();
-      super.didTransition?.();
+    activate() {
+      this.routeSwitch.isTrapped = false;
+      super.activate?.();
+    }
+
+    deactivate() {
+      this.routeSwitch.resetState();
+      super.deactivate?.();
     }
 
     constructor(...args: any[]) {
@@ -25,10 +30,7 @@ export function RouteSwitchProtected<T extends { new (...args: any[]): any }>(
 
     willTransition(transition: Transition<unknown>): void {
       super.willTransition?.(transition);
-      if (this.routeSwitch.locked) {
-        this.routeSwitch.abordTransition(transition);
-        return;
-      }
+      this.routeSwitch.handleTransition(transition);
     }
   };
 
@@ -36,12 +38,7 @@ export function RouteSwitchProtected<T extends { new (...args: any[]): any }>(
     klass.prototype,
     'willTransition'
   );
-  const descDid = Object.getOwnPropertyDescriptor(
-    klass.prototype,
-    'didTransition'
-  );
 
   action(klass.prototype, 'willTransition', descWill!);
-  action(klass.prototype, 'didTransition', descDid!);
   return klass;
 }
