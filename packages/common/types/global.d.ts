@@ -1,6 +1,7 @@
 // Types for compiled templates
-declare module 'common/templates/*' {
-  import { TemplateFactory } from 'htmlbars-inline-precompile';
+declare module '@triptyk/ember-common/templates/*' {
+  import { TemplateFactory } from 'ember-cli-htmlbars';
+
   const tmpl: TemplateFactory;
   export default tmpl;
 }
