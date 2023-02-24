@@ -3,7 +3,7 @@
 ## Installation
 
 * `git clone <repository-url>`
-* `cd common`
+* `cd triptyk-ember-common`
 * `npm install`
 
 ## Linting
