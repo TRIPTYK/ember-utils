@@ -29,7 +29,8 @@
   "dependencies": {
     "ember-cli-babel": "^7.26.11",
     "ember-cli-htmlbars": "^6.2.0",
-    "ember-cli-typescript": "^5.2.1"
+    "ember-cli-typescript": "^5.2.1",
+    "ember-fetch": "^8.1.2"
   },
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
@@ -97,6 +98,7 @@
     "eslint-plugin-unused-imports": "^2.0.0",
     "js-file-downloader": "^1.1.24",
     "loader.js": "^4.7.0",
+    "msw": "^1.1.0",
     "prettier": "^2.8.3",
     "qunit": "^2.19.3",
     "qunit-dom": "^2.0.0",
@@ -114,5 +116,8 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
+  },
+  "msw": {
+    "workerDirectory": "tests/dummy/public"
   }
 }

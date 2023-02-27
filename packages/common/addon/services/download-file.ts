@@ -1,6 +1,6 @@
 import { getOwner } from '@ember/application';
 import Service from '@ember/service';
-import Adapter from '@ember-data/adapter/rest';
+import type Adapter from '@ember-data/adapter/rest';
 import type { OptionalParams } from 'js-file-downloader';
 import config from 'ember-get-config';
 import JsFileDownloader from 'js-file-downloader';
