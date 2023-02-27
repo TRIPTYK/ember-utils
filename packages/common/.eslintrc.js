@@ -34,7 +34,14 @@ module.exports = {
     // node files
     {
       files: [
+        './.formconfig.js',
+        './lighthouserc.js',
         './.eslintrc.js',
+        './index.js',
+        'tests/dummy/config/ember-try.js',
+        'tests/dummy/config/environment.js',
+        'tests/dummy/config/targets.js',
+        './with-backend.js',
         './read-cov.js',
         './app/tailwind/tailwind.config.js',
         './.prettierrc.js',
@@ -45,6 +52,7 @@ module.exports = {
         './config/**/*.js',
         './lib/*/index.js',
         './server/**/*.js',
+        'node-tests/**/*.js',
       ],
       parserOptions: {
         sourceType: 'script',
@@ -52,8 +60,16 @@ module.exports = {
       env: {
         browser: false,
         node: true,
+        jest: true,
       },
-      extends: ['plugin:n/recommended'],
+      plugins: ['node'],
+      extends: ['plugin:node/recommended'],
+      rules: {
+        // this can be removed once the following is fixed
+        // https://github.com/mysticatea/eslint-plugin-node/issues/77
+        'node/no-unpublished-require': 'off',
+        'use-ember-data-rfc-395-imports': 'off',
+      },
     },
     {
       // test files
