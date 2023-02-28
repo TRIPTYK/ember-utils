@@ -1,7 +1,7 @@
 {
-  "name": "@triptyk/ember-common",
+  "name": "@triptyk/ember-utils",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Ember utils for TRIPTYK.",
   "keywords": [
     "ember-addon"
   ],
