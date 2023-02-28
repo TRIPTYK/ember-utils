@@ -9,10 +9,10 @@
     "paths": {
       "dummy/tests/*": ["tests/*"],
       "dummy/*": ["tests/dummy/app/*", "app/*"],
-      "@triptyk/ember-common": ["addon"],
-      "@triptyk/ember-common/*": ["addon/*"],
-      "@triptyk/ember-common/test-support": ["addon-test-support"],
-      "@triptyk/ember-common/test-support/*": ["addon-test-support/*"],
+      "@triptyk/ember-utils": ["addon"],
+      "@triptyk/ember-utils/*": ["addon/*"],
+      "@triptyk/ember-utils/test-support": ["addon-test-support"],
+      "@triptyk/ember-utils/test-support/*": ["addon-test-support/*"],
       "fetch": ["node_modules/ember-fetch"],
       "*": ["types/*"]
     }

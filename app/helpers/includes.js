@@ -1,1 +1,1 @@
-export { default } from '@triptyk/ember-common/helpers/includes';
+export { default } from '@triptyk/ember-utils/helpers/includes';

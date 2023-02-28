@@ -1,4 +1,4 @@
-import { isEven } from '@triptyk/ember-common/helpers/is-even';
+import { isEven } from '@triptyk/ember-utils/helpers/is-even';
 import { module, test } from 'qunit';
 
 module('Integration | Helper | is-even', function () {

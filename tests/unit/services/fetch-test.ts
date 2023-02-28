@@ -5,7 +5,7 @@ import { setupWorker } from './workers/fetch';
 import { Response } from 'fetch';
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import { ServiceWorkerTestContext, setupMock } from 'dummy/tests/worker';
-import type FetchService from '@triptyk/ember-common/services/fetch';
+import type FetchService from '@triptyk/ember-utils/services/fetch';
 
 module('Unit | Service | fetch', function (hooks) {
   setupTest(hooks);

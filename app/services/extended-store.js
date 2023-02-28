@@ -1,1 +1,1 @@
-export { default } from '@triptyk/ember-common/services/extended-store';
+export { default } from '@triptyk/ember-utils/services/extended-store';

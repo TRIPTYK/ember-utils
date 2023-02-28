@@ -1,1 +1,1 @@
-export { default } from '@triptyk/ember-common/services/current-changeset';
+export { default } from '@triptyk/ember-utils/services/current-changeset';

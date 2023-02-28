@@ -1,1 +1,1 @@
-export { default } from '@triptyk/ember-common/services/download-file';
+export { default } from '@triptyk/ember-utils/services/download-file';

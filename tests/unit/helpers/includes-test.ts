@@ -1,4 +1,4 @@
-import { includes } from '@triptyk/ember-common/helpers/includes';
+import { includes } from '@triptyk/ember-utils/helpers/includes';
 import { module, test } from 'qunit';
 
 module('Integration | Helper | includes', function () {

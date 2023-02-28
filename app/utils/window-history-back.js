@@ -1,1 +1,1 @@
-export { default } from '@triptyk/ember-common/utils/window-history-back';
+export { default } from '@triptyk/ember-utils/utils/window-history-back';

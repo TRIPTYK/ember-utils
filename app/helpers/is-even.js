@@ -1,1 +1,1 @@
-export { default } from '@triptyk/ember-common/helpers/is-odd';
+export { default } from '@triptyk/ember-utils/helpers/is-odd';
