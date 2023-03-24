@@ -39,6 +39,7 @@ specifiers:
   '@typescript-eslint/parser': ^5.53.0
   broccoli-asset-rev: ^3.0.0
   concurrently: ^7.6.0
+  date-fns: ^2.29.3
   ember-auto-import: ^2.5.0
   ember-cli: ~4.10.0
   ember-cli-babel: ^7.26.11
@@ -122,6 +123,7 @@ devDependencies:
   '@typescript-eslint/parser': 5.54.0_ycpbpc6yetojsgtrx3mwntkhsu
   broccoli-asset-rev: 3.0.0
   concurrently: 7.6.0
+  date-fns: 2.29.3
   ember-auto-import: 2.6.1_webpack@5.75.0
   ember-cli: 4.10.0
   ember-cli-dependency-checker: 3.3.1_ember-cli@4.10.0
