@@ -19,11 +19,13 @@ Helpers that check if a value is in array.
 ```
 
 ### Translate country
-Helpers that translate a string or an array of code countries (i.e BE will be 'Belgique')
+Helpers that translate a string or an array of code countries (i.e BE will be 'Belgique') in french by default (we can pass a second parameter with the language)
 
 ```hbs
 {{translate-country this.arrayOfCode}}
 {{translate-country this.code}}
+
+{{translate-country this.code "en"}}
 ```
 
 ### Is Even
