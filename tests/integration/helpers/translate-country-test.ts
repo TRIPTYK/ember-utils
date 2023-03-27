@@ -12,4 +12,8 @@ module('Integration | Helper | translate-country', function () {
   test('should translate one code', async function (assert) {
     assert.strictEqual(translateCountry(['BE']), 'Belgique');
   });
+
+  test('should translate one code in english', async function (assert) {
+    assert.strictEqual(translateCountry(['BE', 'en']), 'Belgium');
+  });
 });

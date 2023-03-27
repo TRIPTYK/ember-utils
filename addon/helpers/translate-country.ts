@@ -1,7 +1,11 @@
 import { helper } from '@ember/component/helper';
 
-export function translateCountry([value]: [string[] | string]) {
-  const regionNamesInFrench = new Intl.DisplayNames(['fr'], { type: 'region' });
+export function translateCountry([value, language]: [
+  string[] | string,
+  string?
+]) {
+  const lang = language ?? 'fr';
+  const regionNamesInFrench = new Intl.DisplayNames([lang], { type: 'region' });
   if (Array.isArray(value)) {
     return value.map((country: string) => regionNamesInFrench.of(country));
   }
