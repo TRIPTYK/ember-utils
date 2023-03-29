@@ -96,6 +96,19 @@ import type CurrentChangesetService from '@triptyk/ember-utils/services/current-
 this.currentChangeset.changeset = changeset;
 ```
 
+### Current transition
+Service that set the current transition. When we change route, we can call this service to go back to the transition previously set.
+
+```ts
+import type CurrentTransitionService from '@triptyk/ember-utils/services/current-transition';
+
+@service currentTransition: CurrentTransitionService;
+
+this.currentTransition.setCurrentTransition = transition;
+
+this.currentTransition.goBack();
+```
+
 ## Utils
 
 ### Window history back
