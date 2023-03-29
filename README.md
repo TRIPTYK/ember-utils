@@ -49,7 +49,7 @@ Helpers that check if html doesn't contain any code or characters that could bre
 Service that download file from browser. This service uses the package [https://github.com/AleeeKoi/js-file-downloader](js-file-downloader)
 
 ```ts
-import type DownloadFileService from '@triptyk/ember-utils/service/download-file';
+import type DownloadFileService from '@triptyk/ember-utils/services/download-file';
 
 @service downloadFile: DownloadFileService;
 
@@ -63,7 +63,7 @@ this.downloadFile.downloadFile(
 Service that adds methods to manage the store
 
 ```ts
-import type ExtendedStoreService from '@triptyk/ember-utils/service/extended-store';
+import type ExtendedStoreService from '@triptyk/ember-utils/services/extended-store';
 
 @service extendedStore: ExtendedStoreService;
 
@@ -77,7 +77,7 @@ this.extendedStore.peekOrFail('user', 1); // Will get user with id 1. If user no
 Service that create a fetch request with adapters config from ember
 
 ```ts
-import type FetchService from '@triptyk/ember-utils/service/fetch';
+import type FetchService from '@triptyk/ember-utils/services/fetch';
 
 @service fetch: FetchService;
 
@@ -88,7 +88,7 @@ this.fetch.request('not-found', {...optionsForFetch});
 Service that check if the current changeset is dirty and abord transition to other route if dirty.
 
 ```ts
-import type CurrentChangesetService from '@triptyk/ember-utils/service/current-changeset';
+import type CurrentChangesetService from '@triptyk/ember-utils/services/current-changeset';
 
 @service currentChangeset: CurrentChangesetService;
 
