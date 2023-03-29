@@ -115,3 +115,12 @@ import genericDiff from '@triptyk/ember-utils/utils/generic-diff';
 
 genericDiff(users, newUsers);
 ```
+
+### Sanitize string
+Util that sanitize a string for a search or other use
+
+```ts
+import sanitizeString from '@triptyk/ember-utils/utils/sanitize-string';
+
+sanitizeString(text);
+```
