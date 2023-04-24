@@ -1,1 +1,1 @@
-export { default } from 'common/components/async-data';
+export { default } from '@triptyk/ember-utils/components/async-data';
