@@ -1,6 +1,6 @@
 {
   "name": "@triptyk/ember-utils",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "description": "Ember utils for TRIPTYK.",
   "keywords": [
     "ember-addon"
@@ -63,7 +63,6 @@
     "@types/ember__string": "^3.0.10",
     "@types/ember__template": "^4.0.1",
     "@types/ember__test": "^4.0.1",
-    "@types/ember__test-helpers": "^2.9.1",
     "@types/ember__utils": "^4.0.2",
     "@types/htmlbars-inline-precompile": "^3.0.0",
     "@types/qunit": "^2.19.4",
