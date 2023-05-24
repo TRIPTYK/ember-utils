@@ -13,7 +13,7 @@ interface DownloadFileParameters {
 export interface DownloadFileService {
   downloadFile(
     file: DownloadFileParameters,
-    options: OptionalParams
+    options?: OptionalParams
   ): Promise<void>;
 }
 
