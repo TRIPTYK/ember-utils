@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  date-fns:
+    specifier: ^2.29.3
+    version: 2.29.3
   ember-cli-babel:
     specifier: ^7.26.11
     version: 7.26.11
@@ -126,9 +129,6 @@ devDependencies:
   concurrently:
     specifier: ^7.6.0
     version: 7.6.0
-  date-fns:
-    specifier: ^2.29.3
-    version: 2.29.3
   ember-auto-import:
     specifier: ^2.5.0
     version: 2.6.1(webpack@5.75.0)
@@ -4611,7 +4611,6 @@ packages:
   /date-fns@2.29.3:
     resolution: {integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==}
     engines: {node: '>=0.11'}
-    dev: true
 
   /date-time@2.1.0:
     resolution: {integrity: sha512-/9+C44X7lot0IeiyfgJmETtRMhBidBYM2QFFIkGa0U1k+hSyY87Nw7PY3eDqpvCBm7I3WCSfPeZskW/YYq6m4g==}
