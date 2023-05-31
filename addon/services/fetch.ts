@@ -8,6 +8,7 @@ export default class FetchService extends Service {
    * A regular fetch but with the application adapter scope
    * Throws when status code is >= 400
    */
+  // eslint-disable-next-line no-undef
   async request(url: string, moreOptions: RequestInit = {}) {
     const adapter = this.getAdapterOrThrow();
 

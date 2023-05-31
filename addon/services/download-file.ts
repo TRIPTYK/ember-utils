@@ -4,6 +4,7 @@ import type Adapter from '@ember-data/adapter/rest';
 import type { OptionalParams } from 'js-file-downloader';
 import config from 'ember-get-config';
 import JsFileDownloader from 'js-file-downloader';
+import { getAdapterOrThrow } from '../utils/get-adapter-or-throw';
 
 interface DownloadFileParameters {
   path: string;
@@ -25,15 +26,7 @@ export default class DownloadFileServiceImpl
 
   public constructor(props?: object) {
     super(props);
-    this.adapter = this.getAdapterOrThrow();
-  }
-
-  private getAdapterOrThrow() {
-    const adapter = getOwner(this).lookup('adapter:application') as Adapter;
-    if (!adapter) {
-      throw new Error('Please create an adapter:application');
-    }
-    return adapter;
+    this.adapter = getAdapterOrThrow(this);
   }
 
   async downloadFile(file: DownloadFileParameters, options: OptionalParams) {
