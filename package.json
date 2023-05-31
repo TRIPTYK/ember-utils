@@ -1,6 +1,6 @@
 {
   "name": "@triptyk/ember-utils",
-  "version": "1.0.11",
+  "version": "1.1.0",
   "description": "Ember utils for TRIPTYK.",
   "keywords": [
     "ember-addon"
