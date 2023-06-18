@@ -12,24 +12,38 @@ export interface Err<E> {
 
 export type Result<T, E> = Success<T> | Err<E>;
 
+/**
+ * Converts a Promise into a Result object.
+ * Usefull for handling "expected" errors. If the error is not of the expected type, it will still be thrown ("unexpected" error).
+ * Error type is cheked at runtime, so we have a guarantee that the error is of the expected type. No typescript cast wizardry here.
+ *
+ * @example
+ * const result = await to(getUserData("123"), Error);
+ *
+ *  if (result.ok) {
+ *    console.log("User data:", result.result);
+ *  } else {
+ *    console.error("Error:", result.result);
+ *  }
+ */
 export async function to<T, E extends Error>(
   promise: Promise<T>,
   error: Constructor<E>
 ): Promise<Result<T, E>> {
   try {
-    const data = await promise;
     return {
       ok: true,
-      result: data,
+      result: await promise,
     };
   } catch (err) {
-    if (err instanceof error) {
-      const result_3: Result<never, E> = {
+    // await err to make sure the error is resolved in the case of an error promise
+    const resolvedError = await err;
+    if (resolvedError instanceof error) {
+      return {
         ok: false,
-        result: err as E,
+        result: resolvedError as E,
       };
-      return result_3;
     }
-    throw err;
+    throw resolvedError;
   }
 }
