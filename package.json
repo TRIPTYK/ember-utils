@@ -1,6 +1,6 @@
 {
   "name": "@triptyk/ember-utils",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Ember utils for TRIPTYK.",
   "keywords": [
     "ember-addon"
@@ -110,7 +110,13 @@
     "webpack": "^5.75.0"
   },
   "peerDependencies": {
-    "ember-source": "^3.28.0 || ^4.0.0"
+    "ember-source": "^3.28.0 || ^4.0.0",
+    "ember-cli-fastboot": "~4.1.1"
+  },
+  "peerDependenciesMeta": {
+    "ember-cli-fastboot": {
+      "optional": true
+    }
   },
   "engines": {
     "node": "14.* || 16.* || >= 18"
