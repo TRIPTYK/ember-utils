@@ -1,1 +1,1 @@
-export { default } from '@triptyk/ember-utils/utils/ensure-model-properties';
+export { ensureModelProperties } from '@triptyk/ember-utils/utils/ensure-model-properties';
