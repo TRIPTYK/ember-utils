@@ -27,13 +27,13 @@ export type Result<T, E> = Success<T> | Err<E>;
  *  }
  */
 export async function to<T, E extends Error>(
-  promise: Promise<T>,
+  promise: Promise<T> | (() => Promise<T>),
   error: Constructor<E>
 ): Promise<Result<T, E>> {
   try {
     return {
       ok: true,
-      result: await promise,
+      result: await (promise instanceof Promise ? promise : promise()),
     };
   } catch (err) {
     // await err to make sure the error is resolved in the case of an error promise
