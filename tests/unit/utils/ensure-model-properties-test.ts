@@ -19,7 +19,7 @@ module('Unit | Utils | ensure-model-properties', function (hooks) {
 
     assert.throws(
       () => ensureModelProperties(patient, Foo, ['commitmentDate']),
-      /Error: Missing foo attribute property in model: commitmentDate/
+      /Error: Missing foo attribute property in model: commitmentDate/,
     );
   });
 
@@ -30,7 +30,7 @@ module('Unit | Utils | ensure-model-properties', function (hooks) {
 
     assert.throws(
       () => ensureModelProperties(patient, Foo, ['patientDocuments']),
-      /Error: Missing foo relationship property in model: patientDocuments/
+      /Error: Missing foo relationship property in model: patientDocuments/,
     );
   });
 });

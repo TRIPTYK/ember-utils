@@ -6,7 +6,7 @@ module('Integration | Helper | translate-country', function () {
     const countries = ['BE', 'FR'];
     assert.strictEqual(
       JSON.stringify(translateCountry([countries])),
-      JSON.stringify(['Belgique', 'France'])
+      JSON.stringify(['Belgique', 'France']),
     );
   });
   test('should translate one code', async function (assert) {

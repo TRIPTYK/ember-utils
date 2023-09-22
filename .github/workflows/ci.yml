@@ -21,7 +21,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 18.x
       - name: Cache pnpm modules
         uses: actions/cache@v2
         with:
@@ -32,6 +32,6 @@ jobs:
       - uses: pnpm/action-setup@v2.1.0
         with:
           run_install: true
-          version: 7
+          version: 8
       - name: Run Tests
         run: pnpm test
