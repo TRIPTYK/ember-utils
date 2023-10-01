@@ -8,6 +8,9 @@ module.exports = function (defaults) {
     autoImport: {
       watchDependencies: ['@triptyk/ember-utils'],
     },
+    'ember-cli-addon-docs': {
+      documentingAddonAt: '../ember-utils',
+    }
   });
 
   const { maybeEmbroider } = require('@embroider/test-setup');

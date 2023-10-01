@@ -1,11 +1,12 @@
 {
   "name": "@triptyk/ember-utils",
   "version": "1.2.2",
+  "repository": "https://github.com/TRIPTYK/ember-utils",
+  "homepage": "https://github.com/TRIPTYK/ember-utils",
   "description": "Ember utils for TRIPTYK.",
   "keywords": [
     "ember-addon"
   ],
-  "repository": "",
   "license": "MIT",
   "author": "",
   "exports": {

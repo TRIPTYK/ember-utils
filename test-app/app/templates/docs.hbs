@@ -1,0 +1,32 @@
+<DocsViewer as |viewer|>
+  <viewer.nav as |nav|>
+    <nav.item @label="Index" @route="docs.index" />
+    <nav.section @label="Decorators" />
+    <nav.item @label="Disable in fastboot" @route="docs.decorators.disable-in-fastboot" />
+    <nav.section @label="Helpers" />
+    <nav.item @label="Date format" @route="docs.helpers.date-format" />
+    <nav.item @label="HTML safe" @route="docs.helpers.html-safe" />
+    <nav.item @label="Includes" @route="docs.helpers.includes" />
+    <nav.item @label="Is even" @route="docs.helpers.is-even" />
+    <nav.item @label="Translate country" @route="docs.helpers.translate-country" />
+    <nav.item @label="Truncate" @route="docs.helpers.truncate" />
+    <nav.section @label="Services" />
+    <nav.item @label="Current changeset" @route="docs.services.current-changeset" />
+    <nav.item @label="Current transition" @route="docs.services.current-transition" />
+    <nav.item @label="Download file" @route="docs.services.download-file" />
+    <nav.item @label="Extended store" @route="docs.services.extended-store" />
+    <nav.item @label="Store document" @route="docs.services.store-document" />
+    <nav.section @label="Utils" />
+    <nav.item @label="Ensure model properties" @route="docs.utils.ensure-model-properties" />
+    <nav.item @label="File to form data" @route="docs.utils.file-to-form-data" />
+    <nav.item @label="Generic diff" @route="docs.utils.generic-diff" />
+    <nav.item @label="Sanitize string" @route="docs.utils.sanitize-string" />
+    <nav.item @label="To" @route="docs.utils.to" />
+    <nav.item @label="Window history back" @route="docs.utils.window-history-back" />
+  </viewer.nav>
+
+  <viewer.main>
+    {{outlet}}
+  </viewer.main>
+
+</DocsViewer>
