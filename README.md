@@ -1,6 +1,6 @@
 # @triptyk/ember-utils
 
-[Short description of the addon.]
+Various utilities for TRIPTYK ember projects 
 
 ## Compatibility
 
@@ -13,13 +13,9 @@
 ember install @triptyk/ember-utils
 ```
 
-## Usage
+## Documentation
 
-[Longer description of how to use the addon in apps.]
-
-## Contributing
-
-See the [Contributing](CONTRIBUTING.md) guide for details.
+- [Documentation](https://triptyk.github.io/ember-utils/)
 
 ## License
 

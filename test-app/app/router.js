@@ -8,10 +8,10 @@ const Router = AddonDocsRouter.extend({
 
 Router.map(function () {
   docsRoute(this, function () {
-    this.route('decorators', function() {
+    this.route('decorators', function () {
       this.route('disable-in-fastboot');
     });
-    this.route('helpers', function() {
+    this.route('helpers', function () {
       this.route('date-format');
       this.route('html-safe');
       this.route('includes');
@@ -19,14 +19,14 @@ Router.map(function () {
       this.route('translate-country');
       this.route('truncate');
     });
-    this.route('services', function() {
+    this.route('services', function () {
       this.route('current-changeset');
       this.route('current-transition');
       this.route('download-file');
       this.route('extended-store');
       this.route('store-document');
     });
-    this.route('utils', function() {
+    this.route('utils', function () {
       this.route('ensure-model-properties');
       this.route('file-to-form-data');
       this.route('generic-diff');

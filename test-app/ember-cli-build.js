@@ -10,7 +10,7 @@ module.exports = function (defaults) {
     },
     'ember-cli-addon-docs': {
       documentingAddonAt: '../ember-utils',
-    }
+    },
   });
 
   const { maybeEmbroider } = require('@embroider/test-setup');
