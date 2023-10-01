@@ -19,6 +19,12 @@ module('Unit | Utility | to', function () {
     assert.deepEqual(result, 'bar');
   });
 
+  test('accepts function as callback', async function (assert) {
+    let { ok, result } = await to(() => thatThrows(false), Error);
+    assert.true(ok);
+    assert.deepEqual(result, 'bar');
+  });
+
   test('unknown errors are still thrown', async function (assert) {
     await assert.rejects(to(thatThrows(true), undefined as never));
   });
