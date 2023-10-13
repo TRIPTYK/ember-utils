@@ -81,3 +81,9 @@ export default class StoreDocumentService extends Service {
     };
   }
 }
+
+declare module '@ember/service' {
+  interface Registry {
+    'store-document': StoreDocumentService;
+  }
+}

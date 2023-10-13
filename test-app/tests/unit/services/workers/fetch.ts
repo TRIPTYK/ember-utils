@@ -8,6 +8,6 @@ export function setupWorker(worker: SetupWorker) {
     }),
     rest.get('http://localhost:8080/api/v1/users', (_req, res, ctx) => {
       return res(ctx.status(200), ctx.json({}));
-    })
+    }),
   );
 }

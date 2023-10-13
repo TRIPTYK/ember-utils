@@ -16,7 +16,7 @@ QUnit.begin(async () => {
   worker.use(
     rest.post('/write-coverage', (req) => {
       return req.passthrough();
-    })
+    }),
   );
   await worker.start();
   worker.printHandlers();

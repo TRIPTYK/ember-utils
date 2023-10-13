@@ -30,3 +30,9 @@ export default class CurrentTransitionService extends Service {
     );
   }
 }
+
+declare module '@ember/service' {
+  interface Registry {
+    'current-transition': CurrentTransitionService;
+  }
+}

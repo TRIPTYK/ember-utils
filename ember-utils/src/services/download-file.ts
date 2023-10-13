@@ -46,3 +46,9 @@ export default class DownloadFileServiceImpl
     });
   }
 }
+
+declare module '@ember/service' {
+  interface Registry {
+    'download-file': DownloadFileServiceImpl;
+  }
+}

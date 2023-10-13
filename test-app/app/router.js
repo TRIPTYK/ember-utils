@@ -14,7 +14,6 @@ Router.map(function () {
     this.route('helpers', function () {
       this.route('date-format');
       this.route('html-safe');
-      this.route('includes');
       this.route('is-even');
       this.route('translate-country');
       this.route('truncate');

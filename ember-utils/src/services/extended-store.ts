@@ -36,3 +36,9 @@ export default class ExtendedStoreService extends Service {
     return record;
   }
 }
+
+declare module '@ember/service' {
+  interface Registry {
+    'extended-store': ExtendedStoreService;
+  }
+}

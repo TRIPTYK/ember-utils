@@ -15,7 +15,7 @@ module('Integration | Helper | truncate', function () {
 
     assert.strictEqual(
       truncate([html, size]),
-      `${words.slice(0, size).join(' ')}...`
+      `${words.slice(0, size).join(' ')}...`,
     );
   });
 });

@@ -28,7 +28,7 @@ module('Integration | Util | generic-diff', function () {
     const { created, deleted } = genericDiff(modelsData as any, arrayData);
     assert.strictEqual(
       JSON.stringify(created),
-      JSON.stringify([{ name: 'created' }])
+      JSON.stringify([{ name: 'created' }]),
     );
     assert.strictEqual(
       JSON.stringify(deleted),
@@ -37,7 +37,7 @@ module('Integration | Util | generic-diff', function () {
           id: '1',
           name: 'deleted',
         },
-      ])
+      ]),
     );
   });
 });

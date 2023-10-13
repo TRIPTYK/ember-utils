@@ -24,7 +24,7 @@ module('Unit | Service | extended-store', function (hooks) {
 
   hooks.beforeEach(function () {
     service = this.owner.lookup(
-      'service:extended-store'
+      'service:extended-store',
     ) as ExtendedStoreService;
   });
 
@@ -60,7 +60,7 @@ module('Unit | Service | extended-store', function (hooks) {
     pushInStore.call(this);
     assert.strictEqual(
       (service.peekOrFail('foo', 'bar') as Record<string, unknown>)['id'],
-      'bar'
+      'bar',
     );
   });
 });
