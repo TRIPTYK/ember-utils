@@ -1,6 +1,6 @@
 {
   "name": "@triptyk/ember-utils",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "repository": "https://github.com/TRIPTYK/ember-utils",
   "homepage": "https://github.com/TRIPTYK/ember-utils",
   "description": "Ember utils for TRIPTYK.",
