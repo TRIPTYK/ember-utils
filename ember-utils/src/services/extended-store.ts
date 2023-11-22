@@ -26,7 +26,10 @@ export default class ExtendedStoreService extends Service {
     return record;
   }
 
-  public peekOrFail<K extends keyof ModelRegistry>(recordType: K, id: string) {
+  public peekOrFail<K extends keyof ModelRegistry>(
+    recordType: K,
+    id: string,
+  ): ModelRegistry[K] {
     const record = this.store.peekRecord(recordType, id);
     if (!record) {
       throw new Error(

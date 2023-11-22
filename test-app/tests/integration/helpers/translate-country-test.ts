@@ -6,7 +6,11 @@ import { hbs } from 'ember-cli-htmlbars';
 module('Integration | Helper | translate-country', function (hooks) {
   setupRenderingTest(hooks);
 
-  function setCountries(this: TestContext, countries: string[] | string, language?: string) {
+  function setCountries(
+    this: TestContext,
+    countries: string[] | string,
+    language?: string,
+  ) {
     this.set('countries', countries);
     this.set('language', language);
     return countries;
