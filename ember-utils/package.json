@@ -148,5 +148,13 @@
     "ember-cli-fastboot": ">=4.0.0",
     "ember-source": ">=5.0.0",
     "type-fest": "^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "ember-cli-fastboot": {
+      "optional": true
+    },
+    "type-fest": {
+      "optional": true
+    }
   }
 }
