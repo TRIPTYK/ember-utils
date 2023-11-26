@@ -58,9 +58,6 @@ module('Unit | Service | extended-store', function (hooks) {
 
   test('peekOrFail succeeds when in store', function (assert) {
     pushInStore.call(this);
-    assert.strictEqual(
-      (service.peekOrFail('foo', 'bar') as Record<string, unknown>)['id'],
-      'bar',
-    );
+    assert.strictEqual(service.peekOrFail('foo', 'bar')['id'], 'bar');
   });
 });
