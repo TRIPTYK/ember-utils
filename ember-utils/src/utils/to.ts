@@ -26,7 +26,7 @@ export type Result<T, E> = Success<T> | Err<E>;
  *    console.error("Error:", result.result);
  *  }
  */
-export async function to<T, E extends Error>(
+export default async function to<T, E extends Error>(
   promise: Promise<T> | (() => Promise<T>),
   error: Constructor<E>,
 ): Promise<Result<T, E>> {

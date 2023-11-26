@@ -11,7 +11,7 @@ export type LoadedModel<T extends Model, P extends (keyof T)[]> = Merge<
   }
 >;
 
-export function ensureModelProperties<
+export default function ensureModelProperties<
   T extends Model,
   C extends typeof Model,
   P extends (keyof T)[],

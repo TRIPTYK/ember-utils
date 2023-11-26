@@ -4,7 +4,7 @@ export interface Relation {
   id: string;
 }
 
-export function fileToFormData(file: File, relations: Relation[]) {
+export default function fileToFormData(file: File, relations: Relation[]) {
   const formDataHelper = new FormDataHelper(file);
   formDataHelper.appendRelations(relations);
   return formDataHelper.formData;
