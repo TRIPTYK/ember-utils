@@ -10,6 +10,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "allowJs": true,
+    "skipLibCheck": true,
     "lib": ["esnext","DOM"],
     "allowImportingTsExtensions": true,
     "declarationDir": "declarations"

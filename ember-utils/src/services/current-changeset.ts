@@ -23,7 +23,7 @@ export default class CurrentChangeset extends Service {
 
   @action
   resetTransition(transition: Transition) {
-    if (transition.to.name === transition.from?.name) {
+    if (transition.to?.name === transition.from?.name) {
       return;
     }
     this.approvalNeeded = false;
@@ -37,7 +37,7 @@ export default class CurrentChangeset extends Service {
      * Aproved ? Don't block
      */
     if (
-      transition.to.name === transition.from?.name ||
+      transition.to?.name === transition.from?.name ||
       transition.data['approved']
     ) {
       return;
