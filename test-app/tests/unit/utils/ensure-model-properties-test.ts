@@ -1,5 +1,5 @@
 import type Store from '@ember-data/store';
-import { ensureModelProperties } from '@triptyk/ember-utils/utils/ensure-model-properties';
+import ensureModelProperties from '@triptyk/ember-utils/utils/ensure-model-properties';
 import Foo from 'test-app/models/foo';
 import { setupTest } from 'ember-qunit';
 import { module, test } from 'qunit';

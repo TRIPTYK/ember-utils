@@ -1,4 +1,4 @@
-import { to } from '@triptyk/ember-utils/utils/to';
+import to from '@triptyk/ember-utils/utils/to';
 import { module, test } from 'qunit';
 
 module('Unit | Utility | to', function () {

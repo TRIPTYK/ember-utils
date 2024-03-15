@@ -56,6 +56,7 @@
     "@glimmer/tracking": "~1.1.2",
     "date-fns": "^2.30.0",
     "ember-get-config": "^2.1.1",
+    "ember-modifier": "^4.1.0",
     "js-file-downloader": "^1.1.25"
   },
   "devDependencies": {
@@ -130,6 +131,7 @@
       "./helpers/is-even.js": "./dist/_app_/helpers/is-even.js",
       "./helpers/translate-country.js": "./dist/_app_/helpers/translate-country.js",
       "./helpers/truncate.js": "./dist/_app_/helpers/truncate.js",
+      "./modifiers/offset-class.js": "./dist/_app_/modifiers/offset-class.js",
       "./services/current-changeset.js": "./dist/_app_/services/current-changeset.js",
       "./services/current-transition.js": "./dist/_app_/services/current-transition.js",
       "./services/download-file.js": "./dist/_app_/services/download-file.js",
