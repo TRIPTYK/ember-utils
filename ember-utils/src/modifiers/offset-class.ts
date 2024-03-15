@@ -16,5 +16,5 @@ export default modifier(
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }
+  },
 );
