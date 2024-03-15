@@ -1,0 +1,161 @@
+{
+  "name": "@triptyk/ember-utils",
+  "version": "1.2.6",
+  "repository": "https://github.com/TRIPTYK/ember-utils",
+  "homepage": "https://github.com/TRIPTYK/ember-utils",
+  "description": "Ember utils for TRIPTYK.",
+  "keywords": [
+    "ember-addon"
+  ],
+  "license": "MIT",
+  "author": "",
+  "exports": {
+    ".": {
+      "types": "./declarations/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./declarations/*.d.ts",
+      "default": "./dist/*.js"
+    },
+    "./addon-main.js": "./addon-main.cjs"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "declarations/*"
+      ]
+    }
+  },
+  "files": [
+    "addon-main.cjs",
+    "declarations",
+    "dist"
+  ],
+  "scripts": {
+    "build": "concurrently 'npm:build:*'",
+    "build:js": "rollup --config",
+    "build:types": "glint --declaration",
+    "lint": "concurrently 'npm:lint:*(!fix)' --names 'lint:'",
+    "lint:fix": "concurrently 'npm:lint:*:fix' --names 'fix:'",
+    "lint:hbs": "ember-template-lint . --no-error-on-unmatched-pattern",
+    "lint:hbs:fix": "ember-template-lint . --fix --no-error-on-unmatched-pattern",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix",
+    "lint:types": "glint",
+    "start": "concurrently 'npm:start:*'",
+    "start:js": "rollup --config --watch --no-watch.clearScreen",
+    "start:types": "glint --declaration --watch",
+    "test": "echo 'A v2 addon does not have tests, run tests in test-app'",
+    "prepare": "pnpm run build"
+  },
+  "dependencies": {
+    "@babel/core": "^7.23.2",
+    "@embroider/addon-shim": "^1.0.0",
+    "@glimmer/tracking": "~1.1.2",
+    "date-fns": "^3.5.0",
+    "ember-get-config": "^2.1.1",
+    "ember-modifier": "^4.1.0",
+    "js-file-downloader": "^1.1.25"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.0",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-decorators": "^7.23.2",
+    "@babel/plugin-transform-class-static-block": "^7.20.0",
+    "@babel/plugin-transform-typescript": "^7.22.15",
+    "@babel/preset-typescript": "~7.23.2",
+    "@babel/runtime": "^7.23.2",
+    "@embroider/addon-dev": "^4.1.0",
+    "@glint/core": "^1.2.1",
+    "@glint/environment-ember-loose": "^1.3.0",
+    "@glint/environment-ember-template-imports": "^1.2.1",
+    "@glint/template": "^1.3.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@tsconfig/ember": "^3.0.5",
+    "@types/ember": "^4.0.11",
+    "@types/ember-data": "~4.4.16",
+    "@types/ember-data__adapter": "~4.0.6",
+    "@types/ember-data__model": "~4.0.5",
+    "@types/ember-data__store": "~4.0.7",
+    "@types/ember__application": "^4.0.11",
+    "@types/ember__array": "^4.0.10",
+    "@types/ember__component": "^4.0.22",
+    "@types/ember__controller": "^4.0.12",
+    "@types/ember__debug": "^4.0.8",
+    "@types/ember__engine": "^4.0.11",
+    "@types/ember__error": "^4.0.6",
+    "@types/ember__helper": "^4.0.7",
+    "@types/ember__modifier": "^4.0.9",
+    "@types/ember__object": "^4.0.12",
+    "@types/ember__owner": "^4.0.9",
+    "@types/ember__polyfills": "^4.0.6",
+    "@types/ember__routing": "^4.0.22",
+    "@types/ember__runloop": "^4.0.10",
+    "@types/ember__service": "^4.0.9",
+    "@types/ember__string": "^3.16.3",
+    "@types/ember__template": "^4.0.7",
+    "@types/ember__test": "^4.0.6",
+    "@types/ember__utils": "^4.0.7",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "babel-plugin-ember-template-compilation": "^2.2.0",
+    "concurrently": "^8.2.2",
+    "ember-template-lint": "^5.11.2",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-ember": "^12.0.2",
+    "eslint-plugin-n": "^16.2.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "prettier": "^3.2.5",
+    "prettier-plugin-ember-template-tag": "^2.0.0",
+    "rollup": "^4.0.2",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-ts": "~3.4.5",
+    "typescript": "^5.4.2"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "ember": {
+    "edition": "octane"
+  },
+  "ember-addon": {
+    "version": 2,
+    "type": "addon",
+    "main": "addon-main.cjs",
+    "app-js": {
+      "./helpers/date-format.js": "./dist/_app_/helpers/date-format.js",
+      "./helpers/html-safe.js": "./dist/_app_/helpers/html-safe.js",
+      "./helpers/is-even.js": "./dist/_app_/helpers/is-even.js",
+      "./helpers/translate-country.js": "./dist/_app_/helpers/translate-country.js",
+      "./helpers/truncate.js": "./dist/_app_/helpers/truncate.js",
+      "./modifiers/offset-class.js": "./dist/_app_/modifiers/offset-class.js",
+      "./services/current-changeset.js": "./dist/_app_/services/current-changeset.js",
+      "./services/current-transition.js": "./dist/_app_/services/current-transition.js",
+      "./services/download-file.js": "./dist/_app_/services/download-file.js",
+      "./services/extended-store.js": "./dist/_app_/services/extended-store.js",
+      "./services/fetch.js": "./dist/_app_/services/fetch.js",
+      "./services/store-document.js": "./dist/_app_/services/store-document.js",
+      "./utils/ensure-model-properties.js": "./dist/_app_/utils/ensure-model-properties.js",
+      "./utils/file-to-form-data.js": "./dist/_app_/utils/file-to-form-data.js",
+      "./utils/generic-diff.js": "./dist/_app_/utils/generic-diff.js",
+      "./utils/sanitize-string.js": "./dist/_app_/utils/sanitize-string.js",
+      "./utils/to.js": "./dist/_app_/utils/to.js",
+      "./utils/window-history-back.js": "./dist/_app_/utils/window-history-back.js"
+    }
+  },
+  "peerDependencies": {
+    "ember-cli-fastboot": ">=4.0.0",
+    "ember-source": "^5.0.0",
+    "type-fest": "^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "ember-cli-fastboot": {
+      "optional": true
+    },
+    "type-fest": {
+      "optional": true
+    }
+  }
+}
